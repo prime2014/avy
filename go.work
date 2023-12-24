@@ -1,0 +1,11 @@
+go 1.21.5
+
+use (
+	.
+	./accounts
+	./cart
+	./checkout
+	./db
+	./order
+	./products
+)

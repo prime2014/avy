@@ -1,0 +1,11 @@
+CREATE TABLE cart(
+    id BIGSERIAL PRIMARY KEY NOT NULL,
+    customer INT REFERENCES users(id) ON DELETE CASCADE NOT NULL,
+    item INT REFERENCES products(id) ON DELETE CASCADE NOT NULL,
+    quantity INT DEFAULT 0,
+    price NUMERIC(9, 5) DEFAULT 0,
+    net_price NUMERIC(9, 5) DEFAULT 0,
+    currency VARCHAR(30) NOT NULL,
+    modified_date TIMESTAMPTZ,
+    pubdate TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
+);
